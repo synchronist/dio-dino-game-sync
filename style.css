@@ -23,12 +23,14 @@ body {
     color: #666;
     margin: 50px 0;
     font-family: arial;
+    flex: auto;
   }
   .naruto {
   
     position: absolute;
-    bottom: 100px;
-    background-image: url('cactus.png');
+    flex: auto;
+    bottom: 500px;
+    background-image: url('naruto.png');
     width: 60px;
     height: 60px;
     
@@ -45,6 +47,7 @@ body {
   
   .background {
     position: absolute;
+    flex: auto;
     bottom: 0px;
     background-image: url('background.png');
     background-repeat: repeat-x;
@@ -53,4 +56,11 @@ body {
     width: 100%;
     height: 200px;
   }
+  .bernardo-foto
+{
+  position: absolute;
+  flex: auto;
+  width: 300px;
+  height: 600px;
+}
   

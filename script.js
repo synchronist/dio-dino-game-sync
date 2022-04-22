@@ -35,12 +35,13 @@ function jump() {
       position += 20;
       dino.style.bottom = position + 'px';
     }
+    createNaruto();
   }, 20);
 }
 
 function createCactus() {
   const cactus = document.createElement('div');
-  let cactusPosition = 1000;
+  let cactusPosition = 2000;
   let randomTime = Math.random() * 6000;
 
   if (isGameOver) return;
@@ -58,7 +59,7 @@ function createCactus() {
       // Game over
       clearInterval(leftTimer);
       isGameOver = true;
-      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+      document.body.innerHTML = '<img class="bernardo-foto" src="bernardo.png" alt="Foto do Nenem" width=100% height=100%>';
     } else {
       cactusPosition -= 10;
       cactus.style.left = cactusPosition + 'px';
@@ -70,23 +71,11 @@ function createCactus() {
 
 function createNaruto() {
   const naruto = document.createElement('div');
-  let narutoPosition = 0;
-  let randomTime = Math.random() * 300;
+  let narutoPosition = 1000;
 
   naruto.classList.add('naruto');
   background.appendChild(naruto);
   naruto.style.left = narutoPosition + 'px';
-
-  let leftTimer = setInterval(() => {
-    if (narutoPosition < -60) {
-      clearInterval(leftTimer);
-    } else{
-      narutoPosition -= 10;
-      naruto.style.left = narutoPosition + 'px';
-    }
-
- }, 20)
- setTimeout(createNaruto, randomTime);
 }
 
 createCactus();
